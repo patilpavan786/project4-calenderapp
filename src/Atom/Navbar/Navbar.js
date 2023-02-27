@@ -58,7 +58,7 @@ function handleLogout(){
           <CustomButton buttonText="LogOut"  className={style.logoutbtn2} onClick={handleLogout}/>
           <span className={style.welcome}>
             <h2 className={style.WelcomeHeading}>Welcome,</h2>
-            <h2>{data[0]?.fname}</h2>
+            <h2>{data?.fname}</h2>
           </span>
           </>
         )}

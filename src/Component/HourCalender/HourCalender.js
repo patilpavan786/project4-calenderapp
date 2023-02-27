@@ -5,12 +5,11 @@ import Event from "../Event/Event";
 import Swal from "sweetalert2";
 import { useRecoilState, useRecoilValue } from "recoil";
 import CustomButton from "../../Atom/CustomButton/CustomButton";
-import swal from "sweetalert";
 import { Card } from "../../Recoil/Atom";
 import { NewTask, Currentdate, IsSubmite } from "../../Recoil/Atom";
-import { StyleOutlined } from "@mui/icons-material";
 function HourCalender() {
   let selecteddate = useRecoilValue(Currentdate) || "";
+  const usersList = JSON.parse(localStorage.getItem("userlist"))||[];
   const TimeZone = [
     { id: 1, time: "00:00" },
     { id: 2, time: "1:00" },
@@ -114,7 +113,7 @@ function HourCalender() {
 
   useEffect(() => {
     setShowEventDialogue(true);
-    // console.log(selectedEvent, "selected event");
+
   }, [selectedEvent]);
 
   const handleEdit = (y, id) => {
@@ -181,9 +180,10 @@ function HourCalender() {
                           <h3>TAG:-</h3>
 
                           {el.userData.map((x) => {
+                            const user = usersList.find(user => user.id===x)
                             return (
                               <span className={style.tag}>
-                                <a>{x}</a>
+                                <a>{user.fname}</a>
                               </span>
                             );
                           })}

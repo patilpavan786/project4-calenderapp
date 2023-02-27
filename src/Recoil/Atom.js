@@ -2,9 +2,11 @@
 
 import { atom } from "recoil";
 
-let localcards = JSON.parse(localStorage.getItem("card")) || "";
-// let currentUserdata = JSON.parse(localStorage.getItem("currentuser")) || "";
-// let newfiltercards=[]
+let currentuser = JSON.parse(localStorage.getItem("currentuser")) || "";
+ let localcards = JSON.parse(localStorage.getItem("card") || "[]")
+localcards= localcards.filter(card => card.userData.includes(currentuser.id))
+
+ // let newfiltercards=[]
 
 // let cardId = [];
 // for (let i = 0; i < localcards.length; i++) {

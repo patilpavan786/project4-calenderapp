@@ -37,7 +37,7 @@ function Login() {
     );
     if (getNewData.length > 0) {
       setLogin(true);
-      localStorage.setItem("currentuser", JSON.stringify(getNewData));
+      localStorage.setItem("currentuser", JSON.stringify(getNewData[0]));
      
       swal({
         title: "Login Successful!",

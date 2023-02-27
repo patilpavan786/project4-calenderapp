@@ -10,7 +10,7 @@ import swal from "sweetalert";
 function Event({eventDetails }) {
   let localData = JSON.parse(localStorage.getItem("userlist"));
   let currentuser = JSON.parse(localStorage.getItem("currentuser"));
-
+let selectedUsers = eventDetails ? localData.filter(user=> eventDetails.userData.includes(user.id)):[]
   const [title, setTitle] = useState(eventDetails?.title||"");
   const [description, setDescription] = useState(eventDetails?.description||"");
   const [task, setTask] = useRecoilState(NewTask);
@@ -60,9 +60,9 @@ function Event({eventDetails }) {
       },
       title,
       description,
-      userData,
+      userData:[...userData.map(user=> user.id),currentuser.id],
       selectedDate,
-      currentuserid: currentuser[0].id
+
     };
 
     setTask([Newdata, ...task]);
@@ -112,14 +112,16 @@ function Event({eventDetails }) {
       </span>
 
       <Multiselect
-        isObject={false}
-        options={option}
+        isObject={true}
+        options={localData}
         showCheckbox
+        displayValue="fname"
+        selectedValues={selectedUsers}
         onRemove={(e) => {
           setUserData(e);
         }}
         onSelect={(e) => {
-          console.log(e,"selected users");
+          setUserData(e);
         }}
       />
 

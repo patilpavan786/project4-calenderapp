@@ -3,6 +3,7 @@ import Calender from "../../Component/Calender/Calender";
 import style from "./Rightsection.module.css";
 import { useRecoilValue } from "recoil";
 import { Card } from "../../Recoil/Atom";
+const usersList = JSON.parse(localStorage.getItem("userlist"))||[];
 function Rightsection() {
   const task = useRecoilValue(Card);
   return (
@@ -21,9 +22,10 @@ function Rightsection() {
                 <h3>TAG:-</h3>
 
                 {x.userData.map((x) => {
+                   const user = usersList.find(user => user.id===x)
                   return (
                     <span className={style.tag}>
-                      <a>{x}</a>
+                          <a>{user.fname}</a>
                     </span>
                   );
                 })}
