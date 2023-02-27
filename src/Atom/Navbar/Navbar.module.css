@@ -1,0 +1,113 @@
+.main{
+    width: 100%;
+    position: relative;
+    height: 5rem;
+    background-color: lightgrey ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 8;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;   
+}
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.8rem;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+.input{
+    width: 15rem;
+    height: 2.4rem;
+    border-radius: 9px;
+    font-size: 20px;
+    padding-left: 1rem;
+    margin-right: 1.5rem;
+    border: none;
+}
+
+.input:focus {
+   outline: none;
+}
+
+.WelcomeHeading {
+    margin-right: 0.5rem;
+}
+
+
+.CustomButton{
+display: none;
+
+}
+
+
+
+.welcome{
+    display: flex;
+    justify-content: center;
+align-items: center;
+   color: rgb(73, 80, 80);
+   
+}
+.inner2{
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+.logoutbtn2{
+    display: unset;
+    width: 4.29rem;
+    height: 2.29rem;
+    font-size: 15px;
+    font-weight: 900;
+    border: none;
+    border-radius: 5px;
+    color: rgb(73, 80, 80);
+    cursor: pointer;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.logoutbtn1{
+    display: none;}
+
+@media only screen and (max-width:1024px){
+    .inner2{
+        display:none;
+    }
+    .CustomButton{
+        display: unset;
+        width: 2.29rem;
+        height: 2.29rem;
+        font-size: 28px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: white;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+    .logoutbtn1{
+        display: unset;
+        width: 4.29rem;
+        height: 2.29rem;
+        font-size: 15px;
+        font-weight: 900;
+        border: none;
+        border-radius: 5px;
+        color: rgb(73, 80, 80);
+        cursor: pointer;
+        margin-left: 6rem;
+        background-color: white;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+    .logoutbtn2{
+        display: none;
+    }
+    .CustomButton:hover {
+      
+        background-color: rgb(243, 241, 241);
+    }
+}

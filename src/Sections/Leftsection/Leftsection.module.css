@@ -1,0 +1,40 @@
+
+*{margin: 0;
+padding: 0;}
+.parent{
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.parent::-webkit-scrollbar{
+    display: none;
+}
+.main{
+    width: 100%;
+    height: 9rem;
+    display: flex;
+    flex-direction: column;
+gap: 0.2rem;
+   
+ 
+}
+
+.HourCalenderContainer {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    /* background-color: aqua; */
+    padding-top: 1.5rem;
+}
+.date {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: row;
+    padding-top: 2rem;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 2rem;
+}
+.day{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 22px;
+    padding-left: 2rem;
+}

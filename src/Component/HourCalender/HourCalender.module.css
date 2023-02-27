@@ -1,0 +1,121 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.main{
+  
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    z-index: 4;
+}
+.hour{
+    display: flex;
+    gap: 1rem;
+    position: relative;
+}
+.hour a{
+    font-size: 15px;
+    font-weight: 600;
+}
+.Accordian{
+    width: 80%;
+    height:7.5rem;
+    resize: vertical;;
+    display: flex;
+    flex-direction: column;
+  overflow: auto;
+  overflow: hidden;
+    margin-left: 3.5rem;
+}
+.TaskCard{
+    display: flex;
+justify-content: space-between;
+    width: 100%;
+    overflow: auto;
+  overflow: hidden;
+    margin-bottom: 1px;
+    height: 7rem;
+    background-color: rgb(216, 219, 219);
+    z-index: 5;
+
+}
+.cardtime{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 2px;
+}
+.innercard1{
+    margin-left: 10px;
+}
+.innercard2{
+margin-right: 10px;
+text-align: end;
+}
+.btn{
+    display: flex;
+    gap: 1rem;
+}
+.button{
+        width: 3rem;
+        height: 2rem;
+        font-size: 10px;
+        border: none;
+        border-radius: 5px;
+}
+.button1{
+    width: 3rem;
+    height: 2rem;
+    font-size: 10px;
+    border: none;
+    border-radius: 5px;
+}
+.tagcontainer{
+    margin-top: 2px;
+    flex-wrap: wrap;
+   
+}
+.tag{
+    background-color: rgb(248, 176, 176);
+    border: none ;
+    margin-left: 5px;
+    font-weight: 600;
+    padding: 2px;
+    border: none;
+    border-radius: 5px;
+}
+.YesBtn{
+    width: 8rem;
+    height: 3rem;
+    font-size: 18px;
+    font-weight:600 ;
+    border-radius: 15px;
+    border: none;
+    margin-left: 1rem;
+    background-color: rgb(219, 48, 48);
+}
+
+.NoBtn{
+    width: 8rem;
+    height: 3rem;
+    font-size: 18px;
+    font-weight:600 ;
+
+    border-radius: 15px;
+    border: none;
+    background-color:  lightgrey;
+}
+
+@media only screen and (max-width:700px){
+    .btn{
+        display:flex;
+        /* justify-content: flex-start; */
+        text-align: left;
+        flex-direction: column;
+        gap: 0;
+     
+    }
+
+}
