@@ -119,7 +119,8 @@ function HourCalender() {
 
   const handleEdit = (y, id) => {
     setA(y);
-    // setSelectedEvent(y);
+
+    setShowEventDialogue(true);
     console.log(id);
     if (getissubmite===true) {
       setNewData(newData.filter((x) => x.id !== id));
@@ -128,13 +129,13 @@ function HourCalender() {
 
 
   function comparedate(date1, date2) {
-    if (date1.year !== date2.year) {
+    if (date1?.year !== date2.year) {
       return false;
     }
-    if (date1.month !== date2.month) {
+    if (date1?.month !== date2.month) {
       return false;
     }
-    if (date1.date !== date2.date) {
+    if (date1?.date !== date2.date) {
       return false;
     }
     return true;

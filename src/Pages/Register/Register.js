@@ -6,6 +6,7 @@ import { userDetails } from "../../ConstData/ConstData";
 import { useNavigate, NavLink } from "react-router-dom";
 // import Navbar2 from "../../Atom/Navbar2/Navbar2";
 import swal from "sweetalert";
+import { nanoid } from "nanoid";
 import Navbar from "../../Atom/Navbar/Navbar";
 function Register() {
   const [fname, setFname] = useState("");
@@ -37,6 +38,7 @@ function Register() {
     e.preventDefault();
 
     let dataUser = {
+      id: nanoid(2),
       fname,
       lname,
       email,

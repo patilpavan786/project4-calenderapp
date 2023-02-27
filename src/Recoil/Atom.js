@@ -1,5 +1,29 @@
+
+
 import { atom } from "recoil";
+
 let localcards = JSON.parse(localStorage.getItem("card")) || "";
+// let currentUserdata = JSON.parse(localStorage.getItem("currentuser")) || "";
+// let newfiltercards=[]
+
+// let cardId = [];
+// for (let i = 0; i < localcards.length; i++) {
+//   cardId.push(localcards[i].currentuserid
+//     );
+// }
+
+// let userId = [];
+//   userId.push(currentUserdata[0].id);
+ 
+  // let getNewData =  cardId.filter(
+  //   (e) => e===(userId)
+  // );
+//   let getNewData = localcards?.filter((x)=> x?.currentuserid === currentUserdata[0]?.id)
+//   newfiltercards.push(getNewData)
+
+// console.log(newfiltercards)
+// console.log(cardId)
+
 
 const monthNames = [
   "Jan",
@@ -25,7 +49,7 @@ const defaultDate = {
 };
 export const IsLogin = atom({
   key: "IsLogin",
-  default: true,
+  default: false,
 });
 
 export const Currentdate = atom({
@@ -45,5 +69,5 @@ export const Card = atom({
 
 export const IsSubmite = atom({
   key: "IsSubmite",
-  default: true,
+  default: false,
 });

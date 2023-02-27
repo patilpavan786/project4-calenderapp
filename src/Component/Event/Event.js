@@ -9,6 +9,8 @@ import Multiselect from "multiselect-react-dropdown";
 import swal from "sweetalert";
 function Event({eventDetails }) {
   let localData = JSON.parse(localStorage.getItem("userlist"));
+  let currentuser = JSON.parse(localStorage.getItem("currentuser"));
+
   const [title, setTitle] = useState(eventDetails?.title||"");
   const [description, setDescription] = useState(eventDetails?.description||"");
   const [task, setTask] = useRecoilState(NewTask);
@@ -19,11 +21,14 @@ function Event({eventDetails }) {
   const [option, setOption] = useState(localData);
   const selectedDate = useRecoilValue(Currentdate);
 
+
   useEffect(() => {
     let username = [];
     let localData = JSON.parse(localStorage.getItem("userlist"));
     for (let i = 0; i < localData.length; i++) {
-      username.push(localData[i].fname);
+      username.push({label:localData[i].fname,
+      value:localData[i].id
+      });
       setOption(username);
     }
   }, []);
@@ -36,11 +41,12 @@ function Event({eventDetails }) {
   const EndMin = parseInt(endtime?.split(":")[[1]]);
 
   useEffect(() => {
+    
     localStorage.setItem("card", JSON.stringify(task));
   }, [task]);
 
   function handleSubmite() {
-    setisSubmite(true)
+
 
     let Newdata = {
       id: nanoid(2),
@@ -56,10 +62,11 @@ function Event({eventDetails }) {
       description,
       userData,
       selectedDate,
-      
+      currentuserid: currentuser[0].id
     };
 
     setTask([Newdata, ...task]);
+    setisSubmite(true)
     setTitle("")
     setDescription("")
     setStartTime("")
@@ -112,7 +119,7 @@ function Event({eventDetails }) {
           setUserData(e);
         }}
         onSelect={(e) => {
-          setUserData(e);
+          console.log(e,"selected users");
         }}
       />
 
