@@ -3,14 +3,16 @@ import style from "./Navbar.module.css";
 import AppleIcon from "@mui/icons-material/Apple";
 import { animateScroll as scroll } from "react-scroll";
 import CustomButton from "../CustomButton/CustomButton";
-import {useRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import Dialog from "@mui/material/Dialog";
 import { IsLogin } from "../../Recoil/Atom";
 import Event from "../../Component/Event/Event";
+
 function Navbar() {
-  let [isUserLoggedIn,setIsUserLoggedIn] = useRecoilState(IsLogin);
+  let [isUserLoggedIn, setIsUserLoggedIn] = useRecoilState(IsLogin);
   let user = JSON.parse(localStorage.getItem("currentuser")) || "";
   const [data] = useState(user);
+
   const [showEventDialogue, setShowEventDialogue] = useState(false);
 
   const handleClickOpen = () => {
@@ -20,9 +22,9 @@ function Navbar() {
   const handleClose = () => {
     setShowEventDialogue(false);
   };
-function handleLogout(){
-  setIsUserLoggedIn(false)
-}
+  function handleLogout() {
+    setIsUserLoggedIn(false);
+  }
   return (
     <div className={style.main}>
       <span className={style.logo}>
@@ -30,19 +32,16 @@ function handleLogout(){
           style={{ fontSize: "48px" }}
           onClick={() => scroll.scrollToTop()}
         />
-      
-          {isUserLoggedIn && (
-            <>
-         <CustomButton
-         onClick={handleClickOpen}
-         buttonText="+"
-         className={style.CustomButton}
-       ></CustomButton>
-       <CustomButton buttonText="LogOut"  className={style.logoutbtn1} onClick={handleLogout}/>
-       </>
-        )}
 
-        
+        {isUserLoggedIn && (
+          <>
+            <CustomButton
+              onClick={handleClickOpen}
+              buttonText="+"
+              className={style.CustomButton}
+            ></CustomButton>
+          </>
+        )}
         <Dialog
           open={showEventDialogue}
           onClose={handleClose}
@@ -52,14 +51,30 @@ function handleLogout(){
         </Dialog>
       </span>
 
+      <span>
+        {isUserLoggedIn && (
+          <>
+            <CustomButton
+              buttonText="LogOut"
+              className={style.logoutbtn1}
+              onClick={handleLogout}
+            />
+          </>
+        )}
+      </span>
+
       <div className={style.inner2}>
         {isUserLoggedIn && (
           <>
-          <CustomButton buttonText="LogOut"  className={style.logoutbtn2} onClick={handleLogout}/>
-          <span className={style.welcome}>
-            <h2 className={style.WelcomeHeading}>Welcome,</h2>
-            <h2>{data?.fname}</h2>
-          </span>
+            <CustomButton
+              buttonText="LogOut"
+              className={style.logoutbtn2}
+              onClick={handleLogout}
+            />
+            <span className={style.welcome}>
+              <h2 className={style.WelcomeHeading}>Welcome,</h2>
+              <h2>{data?.fname}</h2>
+            </span>
           </>
         )}
         <input className={style.input} placeholder="Search.." />

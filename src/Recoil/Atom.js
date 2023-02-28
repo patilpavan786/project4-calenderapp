@@ -1,31 +1,8 @@
-
-
 import { atom } from "recoil";
 
 let currentuser = JSON.parse(localStorage.getItem("currentuser")) || "";
  let localcards = JSON.parse(localStorage.getItem("card") || "[]")
 localcards= localcards.filter(card => card.userData.includes(currentuser.id))
-
- // let newfiltercards=[]
-
-// let cardId = [];
-// for (let i = 0; i < localcards.length; i++) {
-//   cardId.push(localcards[i].currentuserid
-//     );
-// }
-
-// let userId = [];
-//   userId.push(currentUserdata[0].id);
- 
-  // let getNewData =  cardId.filter(
-  //   (e) => e===(userId)
-  // );
-//   let getNewData = localcards?.filter((x)=> x?.currentuserid === currentUserdata[0]?.id)
-//   newfiltercards.push(getNewData)
-
-// console.log(newfiltercards)
-// console.log(cardId)
-
 
 const monthNames = [
   "Jan",

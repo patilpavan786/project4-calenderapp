@@ -7,7 +7,7 @@ import HourCalender from "../../Component/HourCalender/HourCalender";
 function Leftsection() {
   const selectedDate = useRecoilValue(Currentdate);
 
-  console.log(selectedDate);
+  // console.log(selectedDate);
   return (
     <div className={style.parent}>
       <div className={style.main}>
